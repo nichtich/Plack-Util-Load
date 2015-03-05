@@ -2,6 +2,12 @@
 
 Plack::Util::Load - load PSGI application from class, file, or URL
 
+# STATUS
+
+[![Build Status](https://travis-ci.org/nichtich/Plack-Util-Load.png)](https://travis-ci.org/nichtich/Plack-Util-Load)
+[![Coverage Status](https://coveralls.io/repos/nichtich/Plack-Util-Load/badge.png)](https://coveralls.io/r/nichtich/Plack-Util-Load)
+[![Kwalitee Score](http://cpants.cpanauthors.org/dist/Plack-Util-Load.png)](http://cpants.cpanauthors.org/dist/Plack-Util-Load)
+
 # SYNOPSIS
 
     use Plack::Util::Load;
@@ -22,7 +28,7 @@ Plack::Util::Load - load PSGI application from class, file, or URL
 
 This module exports the function `load_app` to load a [PSGI](https://metacpan.org/pod/PSGI) application from
 file, class name, URL, or port number on localhost. The function will return a
-code reference or die.
+code reference or die. A typical use case is the application of unit tests.
 
 # OPTIONS
 
