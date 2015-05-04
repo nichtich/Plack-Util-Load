@@ -13,7 +13,7 @@ Plack::Util::Load - load PSGI application from class, file, or URL
     use Plack::Util::Load;
 
     $app = load_app('app.psgi');
-    $app = load_app;
+    $app = load_app; # equivalent
 
     $app = load_app(5000); 
     $app = load_app(':5000');
@@ -28,7 +28,21 @@ Plack::Util::Load - load PSGI application from class, file, or URL
 
 This module exports the function `load_app` to load a [PSGI](https://metacpan.org/pod/PSGI) application from
 file, class name, URL, or port number on localhost. The function will return a
-code reference or die. A typical use case is the application of unit tests.
+code reference or die. A typical use case is the application of tests. To give
+an example, the following test runs on the PSGI application `MyApp::PSGI` by
+default. After deployment the same test can be executed with environment
+variable `TEST_URL` set to the port or URL where the app is installed:
+
+    use Test::More;
+    use Plack::Test;
+    my $app = load_app( $ENV{TEST_URL} || 'MyApp::PSGI', verbose => 1 );
+
+    test_psgi $app, sub {
+        my $cb = shift;
+        ...
+    };
+
+    done_testing;
 
 # OPTIONS
 

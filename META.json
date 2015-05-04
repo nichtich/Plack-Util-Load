@@ -4,7 +4,7 @@
       "-"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Milla version v1.0.8, Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.141520",
+   "generated_by" : "Dist::Zilla version 5.035, Dist::Milla version v1.0.8, CPAN::Meta::Converter version 2.150001",
    "license" : [
       "perl_5"
    ],
@@ -59,7 +59,7 @@
          "web" : "https://github.com/nichtich/Plack-Util-Load"
       }
    },
-   "version" : "0.1",
+   "version" : "0.1.1",
    "x_contributors" : [
       "Jakob Voss <voss@gbv.de>"
    ]
